@@ -5,16 +5,19 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  <ion-card *ngFor="let arte of artes" >
+    <img alt="Silhouette of mountains" src= "{{ arte['primaryimageurl']}}" />
+    <ion-card-header>
+      <ion-card-title>{{ arte['title']}} </ion-card-title>
+      <ion-card-subtitle>{{arte['classification']}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Criada usando a técnica: {{arte['technique']}} no século: {{arte['century']}}.    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
